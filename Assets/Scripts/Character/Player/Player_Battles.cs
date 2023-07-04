@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utility;
 
 public class Player_Battles : MonoBehaviour
 {
@@ -16,16 +17,52 @@ public class Player_Battles : MonoBehaviour
 
     Boss_Option boss_option;
 
+    [SerializeField] private float atkEndTime;
+
+    [SerializeField] private float curEndTime;
+
+    [SerializeField] private byte currentAttackIndex;
+
+    [SerializeField] private byte maxAttack = 2;
+
+    public void Attack()
+    {
+        if (curEndTime > 0) return;
+
+        curEndTime = atkEndTime;
+        animator.SetTrigger($"Attack_Player{currentAttackIndex}");
+        animator.SetBool("IsAttacking", true);
+        Attack_Player();
+
+        currentAttackIndex = (byte)((currentAttackIndex == maxAttack - 1) ? 0 : currentAttackIndex + 1);
+    }
+
+
+
     void Update()
     {
-       if(Time.time >= nextAttackTime)
-       {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                 Attack_Player();
-                 nextAttackTime = Time.time + 1f / attackRate;
-            }
-       }
+        // if (Time.time >= nextAttackTime)
+        // {
+        //     if (Input.GetKeyDown(KeyCode.Space))
+        //     {
+        //         Attack_Player();
+        //         nextAttackTime = Time.time + 1f / attackRate;
+        //     }
+        // }
+
+        if (Input.GetKeyDown(KeyCode.Space) && curEndTime <= 0)
+        {
+            Attack();
+        }
+        
+        if (curEndTime > 0)
+        {
+            curEndTime -= Time.deltaTime;
+        }
+        else
+        {
+            animator.SetBool("isAttacking", false);
+        }
     }
 
     void Attack_Player()
@@ -34,7 +71,7 @@ public class Player_Battles : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach(Collider2D boss_option in hitEnemies)
+        foreach (Collider2D boss_option in hitEnemies)
         {
             boss_option.GetComponent<Boss_Option>().TakeDamage(attackDamage);
         }
@@ -42,7 +79,7 @@ public class Player_Battles : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        if(attackPoint == null)
+        if (attackPoint == null)
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
