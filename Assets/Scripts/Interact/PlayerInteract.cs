@@ -20,7 +20,7 @@ namespace Interact
     {
       if (targetObj is not null)
       {
-        ui.transform.position = Camera.main.WorldToScreenPoint(targetObj.transform.position);
+        ui.transform.position = UnityEngine.Camera.main.WorldToScreenPoint(targetObj.transform.position);
         if (Input.GetKeyDown(KeyCode.F))
         {
           targetObj.OnInteract();
