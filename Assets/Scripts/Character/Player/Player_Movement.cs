@@ -10,9 +10,21 @@ public class Player_Movement : MonoBehaviour
 	public float runSpeed = 40f;
 	public float jumpPower;
 	
-	float horizontalMove = 0f;
+	float horizontalMove
+	{
+		get => _horizontalMove; 
+		set
+		{
+			_horizontalMove = value;
+			animator.SetFloat("Speed", Mathf.Abs(_horizontalMove));
+		}
+	}
+	float _horizontalMove;
 	private bool jump = false;
 	private Rigidbody2D rigid;
+
+	public GameObject chatUI;
+	public bool canMove => !chatUI.gameObject.activeSelf;
 
 	private void Awake()
 	{
@@ -21,9 +33,11 @@ public class Player_Movement : MonoBehaviour
 
 	void Update()
 	{
+		if (!canMove && horizontalMove != 0) horizontalMove = 0;
+		if (!canMove) return;
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+		//animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
 		if (Input.GetKeyDown(KeyCode.W))
 		{

@@ -19,12 +19,13 @@ public class PlayerAction : MonoBehaviour
         Debug.DrawRay(transform.position, Vector2.right * distance, Color.green);
         RaycastHit2D hit = Physics2D.Raycast(this.gameObject.transform.position, Vector2.right, distance, layermask);
 
-        if (hit.collider != null)
+        if (hit.collider is not null)
         {
             scanObject = hit.transform.gameObject;
-
+        }
+        else
+        {
+            scanObject = null;
         }
     }
-
-
 }

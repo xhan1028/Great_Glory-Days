@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject scanObject; 
     public bool isAction;
     public int talkIndex;
+    public Player_Movement movement;
 
     public void Action(GameObject scanObj)
     {
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
         {
             isAction = false;
             talkIndex = 0;
+            scanObject = null;
             return;
         }
 
@@ -44,5 +46,6 @@ public class GameManager : MonoBehaviour
 
         isAction = true;
         talkIndex++;
+        
     }
 }
