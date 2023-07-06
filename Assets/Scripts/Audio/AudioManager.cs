@@ -64,6 +64,8 @@ namespace Audio
       else
         Debug.LogError($"Can't find BGM audio data: {bgmName}.");
     }
+
+    public void StopBGM() => _bgmPlayer.Stop();
     
     public void PlaySFX(string sfxName)
     {
