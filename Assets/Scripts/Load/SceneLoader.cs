@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using Manager;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Load
 {
-  public class LoadScene : MonoBehaviour
+  public class SceneLoader : SingleTon<SceneLoader>
   {
     public void Load(string sceneName)
     {

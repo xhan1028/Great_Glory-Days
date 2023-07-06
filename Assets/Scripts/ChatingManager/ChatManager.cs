@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GameManager : MonoBehaviour
+public class ChatManager : MonoBehaviour
 {
     public TalkManager talkManager;
     public GameObject talkPanel;

@@ -16,6 +16,9 @@ namespace Manager
         Debug.LogError($"SingleTon {typeof(T).Name} is already exist.");
         Destroy(this);
       }
+      
+      if (this is IDontDestroy)
+        DontDestroyOnLoad(gameObject);
     }
   }
 }
