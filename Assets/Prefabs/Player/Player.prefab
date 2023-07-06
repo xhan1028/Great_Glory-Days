@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 6345548618356752349}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,6 +251,7 @@ MonoBehaviour:
   animator: {fileID: 6345548618356752339}
   runSpeed: 40
   jumpPower: 10
+  chatUI: {fileID: 0}
 --- !u!114 &6345548618356752349
 MonoBehaviour:
   m_ObjectHideFlags: 0

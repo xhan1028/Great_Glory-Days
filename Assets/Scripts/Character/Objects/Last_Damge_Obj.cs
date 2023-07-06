@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackPoint : MonoBehaviour
+public class Last_Damge_Obj : MonoBehaviour
 {
     [SerializeField]
-    private int damage = 1;
+    private int damage = 10;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Last_EnemyHealth>().TakeDamage(damage);
+            collision.GetComponent<PlayerHp>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }
