@@ -1,6 +1,6 @@
 ﻿namespace ScreenEffect
 {
-  public struct EffectOption
+  public class EffectOption
   {
     public ScreenEffect effect;
 

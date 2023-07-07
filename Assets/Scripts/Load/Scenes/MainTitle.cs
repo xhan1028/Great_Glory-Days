@@ -9,7 +9,6 @@ namespace Load.Scenes
   {
     public override void OnStart()
     {
-      base.OnStart();
       StartScreenEffect(new EffectOption(ScreenEffects.FadeIn, 3f, 1.5f));
       PlayBGM("main");
     }

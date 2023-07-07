@@ -6,7 +6,6 @@ namespace Load.Scenes
   {
     public override void OnStart()
     {
-      base.OnStart();
       StopBGM();
     }
     
