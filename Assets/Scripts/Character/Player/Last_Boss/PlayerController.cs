@@ -11,6 +11,14 @@ public class PlayerController : MonoBehaviour
     private PlayerWeapon playerweapon;
     private PlayerMovement playermovement;
 
+ //   private int score;
+    
+  //  public int Score
+   // {
+  //      set => score = Mathf.Max(0, value);
+    //    get => score;
+  // }
+
     private void Awake()
     {
         playermovement = GetComponent<PlayerMovement>();
