@@ -2101,5 +2101,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6345548618356752348, guid: 595f4b49c72398145b9064a3ad40a82d, type: 3}
+      propertyPath: chatUI
+      value: 
+      objectReference: {fileID: 1791382518}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595f4b49c72398145b9064a3ad40a82d, type: 3}

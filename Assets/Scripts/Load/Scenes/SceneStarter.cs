@@ -6,19 +6,20 @@ using UnityEngine;
 
 namespace Load.Scenes
 {
-  public abstract class SceneStarter : MonoBehaviour
+  public class SceneStarter : MonoBehaviour
   {
     public virtual void OnStart()
+    {
+      
+    }
+
+    private void Start()
     {
       if (FindObjectOfType<GameManager>() is null)
       {
         var manager = Resources.Load<GameObject>("Managers");
         Instantiate(manager).name = "Managers";
       }
-    }
-
-    private void Start()
-    {
       OnStart();
     }
 
