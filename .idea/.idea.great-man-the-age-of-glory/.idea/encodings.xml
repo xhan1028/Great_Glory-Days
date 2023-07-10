@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
-<<<<<<< Updated upstream
-    <file url="file://$PROJECT_DIR$/Assets/Scripts/Character/Boss/Boss_Option.cs" charset="x-windows-949" />
-=======
->>>>>>> Stashed changes
+  <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Assets/Scripts/ChatingManager/TalkManager.cs" charset="x-windows-949" />
   </component>
 </project>

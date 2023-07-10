@@ -28,6 +28,9 @@ namespace ScreenEffect
         SetEffect(ScreenEffects.ImmediatelyOut);
       yield return new WaitForSecondsRealtime(delay);
       SetEffect(effect, speed);
+      targetImg.raycastTarget = true;
+      yield return new WaitForSecondsRealtime(speed);
+      targetImg.raycastTarget = false;
     }
 
     public void Play(ScreenEffect effect, float speed = 1f, float delay = 0f)
