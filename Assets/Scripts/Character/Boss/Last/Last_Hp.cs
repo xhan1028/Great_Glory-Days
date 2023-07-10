@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinema;
+using Load;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -28,7 +30,8 @@ public class Last_Hp : MonoBehaviour
 
         if ( currentHP <= 0 )
         {
-            SceneManager.LoadScene("lastbossdie");
+            // SceneManager.LoadScene("lastbossdie");
+            CinemaManager.Instance.Play("LastBossDie", "", false);
         }
     }
 

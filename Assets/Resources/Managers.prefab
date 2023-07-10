@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoClips:
   - {fileID: 32900000, guid: 2cece9f506bb24340932a2cd84de6821, type: 3}
+  - {fileID: 32900000, guid: 10d3733e405cac247a9bf7b84f07246a, type: 3}
 --- !u!1 &8439092388113611885
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +163,11 @@ MonoBehaviour:
     loop: 1
   - name: helper
     audioClip: {fileID: 8300000, guid: 4cd3ba7e2dbef7045a3582693ff6d858, type: 3}
+    pitch: 1
+    delay: 0
+    loop: 1
+  - name: select
+    audioClip: {fileID: 8300000, guid: b93a92274b181784bb477552bb8677a4, type: 3}
     pitch: 1
     delay: 0
     loop: 1
@@ -435,7 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

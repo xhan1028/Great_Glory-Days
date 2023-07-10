@@ -29,7 +29,7 @@ public class Last_Enemy : MonoBehaviour
 
     private void SpawnItem()
     {
-        // ·¹º§¾÷ 5% / È¸º¹ 17%
+        // ë ˆë²¨ì—… 5% / íšŒë³µ 17%
         int spawnItem = Random.Range(0, 100);
         if ( spawnItem < 5 )
         {

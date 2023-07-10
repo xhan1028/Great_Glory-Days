@@ -11,6 +11,7 @@ namespace Load.Scenes
 
     public override void OnStart()
     {
+      PlayBGM("select");
     }
 
     public void GoToCinema()

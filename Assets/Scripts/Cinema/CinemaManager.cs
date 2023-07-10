@@ -56,6 +56,7 @@ namespace Cinema
       SceneLoader.Instance.Load("Open_Cinema",beforeEffect, afterEffect, () =>
       {
         controller = FindObjectOfType<CinemaController>();
+        controller.skipButton.SetActive(isSkipable);
         controller.player.clip = clip;
         controller.player.Play();
         
