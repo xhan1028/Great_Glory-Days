@@ -18,6 +18,7 @@ namespace UI
 
     public string characterName;
 
+    [Multiline]
     public string characterDescription;
 
     public CharacterType type;
