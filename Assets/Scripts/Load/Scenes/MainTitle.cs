@@ -9,7 +9,6 @@ namespace Load.Scenes
   {
     public override void OnStart()
     {
-      base.OnStart();
       StartScreenEffect(new EffectOption(ScreenEffects.FadeIn, 3f, 1.5f));
       PlayBGM("main");
     }
@@ -25,7 +24,7 @@ namespace Load.Scenes
     public void GoToStart() =>
       ChangeScene
       (
-        "Open_Cinema", 
+        "SelectCharacter", 
         new EffectOption(ScreenEffects.PushL2R, speed: 1.3f), 
         new EffectOption(ScreenEffects.FadeIn, speed: 1.3f, delay: 1f)
       );

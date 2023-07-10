@@ -3,11 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - Enemy
   - InteractableObject
   - EnemyAttack
   - Boss
+=======
+  tags: []
+>>>>>>> 28b65b6cc74eac4923438896a3ec66a05aae7fa4
   layers:
   - Default
   - TransparentFX
@@ -15,11 +19,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
-  - Player
-  - Enemy
-  - InteractableObject
-  - Npc
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
