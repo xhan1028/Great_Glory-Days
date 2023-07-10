@@ -14,5 +14,10 @@ public class PlayerAttackPoint : MonoBehaviour
             collision.GetComponent<Last_EnemyHealth>().TakeDamage(damage);
             Destroy(gameObject);
         }
+        else if(collision.CompareTag("Boss"))
+        {
+            collision.GetComponent<Last_Hp>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }

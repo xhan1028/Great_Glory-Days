@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Last_Boss2.unity
     guid: a974ddc9ac7fff4449336d74b1834b70
+  - enabled: 1
+    path: Assets/Scenes/Load/lastbossdie.unity
+    guid: d7047e49cb073274eaca5c4860a09e59
   m_configObjects: {}

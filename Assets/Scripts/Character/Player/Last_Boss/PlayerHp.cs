@@ -32,7 +32,7 @@ public class PlayerHp : MonoBehaviour
 
         if ( currentHp <= 0 )
         {
-            Debug.Log("플레이어 체력 : 0");
+           // SceneManager.LoadScene("Die");
         }
     }
 
