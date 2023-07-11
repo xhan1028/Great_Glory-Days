@@ -8,6 +8,8 @@ namespace Load.Scenes
   public class Die : SceneStarter
   {
     public GameObject[] visibleObjs;
+
+    public string retryScene;
     
     public override void OnStart()
     {
@@ -36,7 +38,7 @@ namespace Load.Scenes
     public void Retry() =>
       ChangeScene
       (
-        "Samurai_Battle", 
+        retryScene, 
         new EffectOption(ScreenEffects.FadeOut, speed: 1.3f), 
         new EffectOption(ScreenEffects.FadeIn, speed: 0.7f, delay: 0.3f)
       );

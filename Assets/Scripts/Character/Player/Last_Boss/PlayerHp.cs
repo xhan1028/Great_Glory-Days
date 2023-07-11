@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -38,6 +39,7 @@ public class PlayerHp : MonoBehaviour
         if ( currentHp <= 0 )
         {
            // SceneManager.LoadScene("Die");
+           GameManager.Instance.Die(SceneManager.GetActiveScene().name);
         }
     }
 

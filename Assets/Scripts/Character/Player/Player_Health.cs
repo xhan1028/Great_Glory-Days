@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -44,7 +45,8 @@ public class Player_Health : MonoBehaviour
 
   void Die()
   {
-    SceneManager.LoadScene("Die");
+    // SceneManager.LoadScene("Die");
+    GameManager.Instance.Die(SceneManager.GetActiveScene().name);
   }
 
   IEnumerator DamageAnimation()
