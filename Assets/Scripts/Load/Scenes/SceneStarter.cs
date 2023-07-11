@@ -13,19 +13,21 @@ namespace Load.Scenes
       
     }
 
+    private void Awake()
+    {
+      if (FindObjectOfType<GameManager>() is not null) return;
+      var manager = Resources.Load<GameObject>("Managers");
+      Instantiate(manager).name = "Managers";
+    }
+
     private void Start()
     {
-      if (FindObjectOfType<GameManager>() is null)
-      {
-        var manager = Resources.Load<GameObject>("Managers");
-        Instantiate(manager).name = "Managers";
-      }
       OnStart();
     }
 
-    protected static void StartScreenEffect(EffectOption effectOption)
+    protected static void StartScreenEffect(EffectOption effectOption, bool force = false)
     {
-      if (!SceneLoader.Instance.isLoading)
+      if (force || !SceneLoader.Instance.isLoading)
         ScreenEffectManager.Instance.Play(effectOption);
     }
 

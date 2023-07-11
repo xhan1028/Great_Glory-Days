@@ -782,10 +782,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: "\uC774\uC21C\uC2E0"
-  characterDescription: "16\uC138\uAE30 \uB9D0 \uC870\uC120\uC758 \uBA85\uC7A5\uC774\uC790
-    \uAD6C\uAD6D\uC601\uC6C5\uC778 \uCDA9\uBB34\uACF5\uC73C\uB85C, \n\uC784\uC9C4\uC65C\uB780
-    \uBC0F \uC815\uC720\uC7AC\uB780 \uB2F9\uC2DC \uC870\uC120 \uC218\uAD70\uC744
-    \uC9C0\uD718\uD588\uB358 \uC81C\uB3C5\uC774\uB2E4.\n"
+  characterDescription: "\n\n16\uC138\uAE30 \uB9D0 \uC870\uC120\uC758 \uBA85\uC7A5\uC774\uC790
+    \uAD6C\uAD6D\uC601\uC6C5\uC778 <color=red>\uCDA9\uBB34\uACF5</color>\uC73C\uB85C,
+    \n\uC784\uC9C4\uC65C\uB780 \uBC0F \uC815\uC720\uC7AC\uB780\n\uB2F9\uC2DC \uC870\uC120
+    \uC218\uAD70\uC744\n\uC9C0\uD718\uD588\uB358 \uC81C\uB3C5\uC774\uB2E4.\n"
   type: 1
   clickDisplay: {fileID: 842824553}
 --- !u!1 &380683991
@@ -998,7 +998,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -8, y: 0}
-  m_SizeDelta: {x: 500, y: 600}
+  m_SizeDelta: {x: 606.1663, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429389522
 MonoBehaviour:

@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Utility;
 
 public class Player_Battles : MonoBehaviour
@@ -29,6 +32,19 @@ public class Player_Battles : MonoBehaviour
   [SerializeField]
   private byte maxAttack = 2;
 
+  private void Awake()
+  {
+    ScreenClick.Instance.onPointClick += ScreenClick_OnPointClick;
+  }
+
+  private void ScreenClick_OnPointClick(PointerEventData eventdata)
+  {
+    if (curEndTime <= 0)
+    {
+      Attack();
+    }
+  }
+
   public void Attack()
   {
     if (curEndTime > 0) return;
@@ -53,10 +69,10 @@ public class Player_Battles : MonoBehaviour
     //     }
     // }
 
-    if (Input.GetKeyDown(KeyCode.Space) && curEndTime <= 0)
-    {
-      Attack();
-    }
+    // if (Input.GetKeyDown(KeyCode.Space) && curEndTime <= 0)
+    // {
+    //   Attack();
+    // }
 
     if (curEndTime > 0)
     {

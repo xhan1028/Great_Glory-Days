@@ -33,13 +33,14 @@ public class Player_Movement : MonoBehaviour
 
 	void Update()
 	{
+		if (chatUI is null) return;
 		if (!canMove && horizontalMove != 0) horizontalMove = 0;
 		if (!canMove) return;
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
 		//animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-		if (Input.GetKeyDown(KeyCode.W))
+		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			if (!jump)
 			{
