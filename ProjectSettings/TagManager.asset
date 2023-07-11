@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - InteractableObject
   - Boss
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX

@@ -65,6 +65,8 @@ public class Last_Spawner : MonoBehaviour
     {
         last_bgm.BossBgm(BGMType.Boss);
         Boss_Text.SetActive(true);
+        var sc = GameObject.Find("ScreenColor").GetComponent<Animator>();
+        sc.Play("Effect");
         yield return new WaitForSeconds(3.0f);
         Boss_Text.SetActive(false);
         panelBossHp.SetActive(true);

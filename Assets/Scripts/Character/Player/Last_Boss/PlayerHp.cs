@@ -16,11 +16,14 @@ public class PlayerHp : MonoBehaviour
         set => currentHp = Mathf.Clamp(value, 0, maxHp);
         get => currentHp;
     }
+    
+    private Animator cameraAnimator;
 
     private void Awake()
     {
         currentHp = maxHp;
         spriterenderer = GetComponent<SpriteRenderer>();
+        cameraAnimator = FindObjectOfType<UnityEngine.Camera>().GetComponent<Animator>();
     }
 
     public void TakeDamage(float damage)
@@ -30,6 +33,8 @@ public class PlayerHp : MonoBehaviour
         StopCoroutine("HitColorAnimation");
         StartCoroutine("HitColorAnimation");
 
+        cameraAnimator.Play("Hurt" + Random.Range(1,3));
+        
         if ( currentHp <= 0 )
         {
            // SceneManager.LoadScene("Die");
