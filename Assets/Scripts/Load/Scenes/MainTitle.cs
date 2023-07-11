@@ -24,7 +24,7 @@ namespace Load.Scenes
     public void GoToStart() =>
       ChangeScene
       (
-        "SelectCharacter", 
+        "Information", 
         new EffectOption(ScreenEffects.PushL2R, speed: 1.3f), 
         new EffectOption(ScreenEffects.FadeIn, speed: 1.3f, delay: 1f)
       );

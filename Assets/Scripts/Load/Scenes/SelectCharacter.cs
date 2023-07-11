@@ -27,7 +27,7 @@ namespace Load.Scenes
 
     public static readonly Dictionary<CharacterType, (string cinema, string scene)> scenes = new()
     {
-      { CharacterType.Yisunsin, ("Yisunsin_Cinema1", "Home") }
+      { CharacterType.Yisunsin, ("Open_Cinema", "Home") }
     };
   }
 }
