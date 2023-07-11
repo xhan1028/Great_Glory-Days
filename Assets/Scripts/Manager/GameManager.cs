@@ -1,6 +1,7 @@
 ﻿using Load;
 using Load.Scenes;
 using ScreenEffect;
+using UnityEngine.SceneManagement;
 
 namespace Manager
 {
@@ -8,8 +9,13 @@ namespace Manager
   {
     public void Die(string retryScene)
     {
-      SceneLoader.Instance.Load("Die", ScreenEffects.ImmediatelyOut, ScreenEffects.ImmediatelyIn,
-        () => FindObjectOfType<Die>().retryScene = retryScene);
+      SceneLoader.Instance.Load("Die", null, null, () => FindObjectOfType<Die>().retryScene = retryScene);
+    }
+
+    public void Die()
+    {
+      var sceneName = SceneManager.GetActiveScene().name;
+      SceneLoader.Instance.Load("Die", null, null, () => FindObjectOfType<Die>().retryScene = sceneName);
     }
   }
 }
