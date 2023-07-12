@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
+using Audio;
 using BattleMode;
 using Pool;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Character.Player.ArrowBattle
 {
@@ -17,7 +19,7 @@ namespace Character.Player.ArrowBattle
     private Animator anim;
 
     private Arrow arrowManager;
-    
+
     private bool isDied;
 
     private void Awake()
@@ -29,16 +31,20 @@ namespace Character.Player.ArrowBattle
     public void TakeDamage()
     {
       // Release();
+      if (isDied) return;
       isDied = true;
       anim.Play("Die");
+      AudioManager.Instance.PlaySFX("blood" + Random.Range(1, 4));
     }
 
     public void FixedUpdate()
     {
       if (!walking) return;
-      if (!isDied) 
+      if (!isDied)
+      {
         anim.Play("Walking");
-      transform.Translate(Vector3.down * speed * Time.fixedDeltaTime);
+        transform.Translate(Vector3.down * speed * Time.fixedDeltaTime);
+      }
     }
 
     private void OnTriggerEnter2D(Collider2D col)

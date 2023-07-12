@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 
 public enum AttackType { LastBossWeapon = 0, LastBossCenterAttack }
@@ -28,6 +29,7 @@ public class Last_BossPattern : MonoBehaviour
 
         while (true)
         {
+            AudioManager.Instance.PlaySFX("explosion");
             for(int i = 0; i<count; ++i)
             {
                 GameObject clone = Instantiate(BossAttackPrefab, transform.position, Quaternion.identity);
@@ -50,6 +52,7 @@ public class Last_BossPattern : MonoBehaviour
 
         while(true)
         {
+            AudioManager.Instance.PlaySFX("lazer1");
             GameObject clone = Instantiate(BossAttackPrefab, transform.position, Quaternion.identity);
             Vector3 direction = (targetPosition - clone.transform.position).normalized;
             clone.GetComponent<PlayerMovement>().MoveTo(direction);

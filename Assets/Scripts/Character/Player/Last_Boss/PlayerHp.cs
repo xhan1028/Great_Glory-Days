@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,6 +32,8 @@ public class PlayerHp : MonoBehaviour
     {
         currentHp -= damage;
 
+        AudioManager.Instance.PlaySFX("hurt");
+        
         StopCoroutine("HitColorAnimation");
         StartCoroutine("HitColorAnimation");
 

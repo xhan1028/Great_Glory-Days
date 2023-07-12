@@ -7,7 +7,12 @@ namespace Load.Scenes
   public class Arrow : SceneStarter ,IScreenClickable
   {
     public ArrowPlayer player;
-    
+
+    public override void OnStart()
+    {
+      PlayBGM("arrow");
+    }
+
     public void OnScreenClick(PointerEventData eventData)
     {
       player.Attack();

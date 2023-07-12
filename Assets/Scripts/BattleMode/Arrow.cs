@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Character.Player.ArrowBattle;
+using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -18,6 +19,8 @@ namespace BattleMode
     public float delay;
     
     public float speed;
+
+    public int phase = 0;
 
     [SerializeField]
     private Transform[] spawnLocate;
@@ -39,6 +42,12 @@ namespace BattleMode
     [SerializeField]
     private ProgressBar waitBar;
 
+    [SerializeField]
+    private TextMeshProUGUI leftCountTMP;
+
+    [SerializeField]
+    private Count counter;
+
     private void Awake()
     {
       poolManager = FindObjectOfType<ArrowEnemyPoolManager>();
@@ -47,17 +56,41 @@ namespace BattleMode
 
     private void Start()
     {
-      Play(2);
+      StartPattern(spawnRoutines);
+    }
+
+    public void StartPattern(string[] pattern)
+    {
+      spawnRoutines = pattern;
+      phase = 0;
+      Play(phase);
     }
 
     private void Enemy_OnReleased(ArrowEnemy obj)
     {
       curCount++;
+
+      if (curCount == maxCount)
+      {
+        if (phase == spawnRoutines.Length - 1)
+        {
+          Debug.Log("Success");
+        }
+        else
+        {
+          counter.StartCounting(3, () =>
+          {
+            Play(++phase);
+          });
+        }
+
+      }
     }
 
     public void Play(int index)
     {
       maxCount = GetMaxCount(spawnRoutines[index]);
+      curCount = 0;
       StartCoroutine(PlayRoutine(spawnRoutines[index]));
     }
 
@@ -70,6 +103,20 @@ namespace BattleMode
     {
       playerHpBar.maxValue = player.maxHp;
       playerHpBar.value = player.hp;
+
+      if (counter.isCounting)
+      {
+        leftCountBar.maxValue = counter.maxTime;
+        leftCountBar.value = counter.time;
+      }
+      else
+      {
+        leftCountBar.maxValue = maxCount;
+        leftCountBar.value = maxCount - curCount;
+      }
+
+      leftCountTMP.text = $"{maxCount - curCount}명 남음 - 페이즈 {phase + 1}";
+      
     }
 
     private IEnumerator PlayRoutine(string routine)
@@ -87,18 +134,16 @@ namespace BattleMode
         if (key.Contains('D'))
           SpawnEnemy(Direction.Down);
 
-        var removeKey = key.Replace("L", "").Replace("R", "").Replace("U", "").Replace("D", "");
-
-        if (removeKey.Contains('s'))
+        if (key.Contains('s'))
         {
-          var s = removeKey.Split('s')[1].Split('s')[0];
+          var s = key.Split('s')[1];
           if (float.TryParse(s, out var changeSpeed))
             speed = changeSpeed;
         }
         
-        if (removeKey.Contains('d'))
+        if (key.Contains('d'))
         {
-          var s = removeKey.Split('d')[1].Split('d')[0];
+          var s = key.Split('d')[1];
           if (float.TryParse(s, out var changeDelay))
             delay = changeDelay;
         }

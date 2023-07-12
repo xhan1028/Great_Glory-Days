@@ -1004,24 +1004,100 @@ MonoBehaviour:
   - name: main
     audioClip: {fileID: 8300000, guid: 2e7c4c6d9e7494f4e90f1030823023c9, type: 3}
     pitch: 1
+    volume: 1
     delay: 0
     loop: 1
   - name: helper
     audioClip: {fileID: 8300000, guid: 4cd3ba7e2dbef7045a3582693ff6d858, type: 3}
     pitch: 1
+    volume: 1
     delay: 0
     loop: 1
   - name: select
     audioClip: {fileID: 8300000, guid: b93a92274b181784bb477552bb8677a4, type: 3}
     pitch: 1
+    volume: 1
     delay: 0
     loop: 1
   - name: samurai
     audioClip: {fileID: 8300000, guid: 7b55a4c0658a48a42b42fd8f1954fe73, type: 3}
     pitch: 1
+    volume: 1
     delay: 0
     loop: 1
-  sfxDatas: []
+  - name: arrow
+    audioClip: {fileID: 8300000, guid: e0754d520f15a6843aba02f6cfed0f48, type: 3}
+    pitch: 1
+    volume: 1
+    delay: 1
+    loop: 1
+  sfxDatas:
+  - name: sword
+    audioClip: {fileID: 8300000, guid: 3cc4f16f06b396940a1d8006be363320, type: 3}
+    pitch: 1
+    volume: 0.637
+    delay: 0
+    loop: 0
+  - name: hurt
+    audioClip: {fileID: 8300000, guid: fd2328da8ffda974c95100065b4128ae, type: 3}
+    pitch: 1
+    volume: 1
+    delay: 0
+    loop: 0
+  - name: blood1
+    audioClip: {fileID: 8300000, guid: 44081f90ed8375f468b0a13b84abcd1e, type: 3}
+    pitch: 1
+    volume: 1
+    delay: 0
+    loop: 0
+  - name: blood2
+    audioClip: {fileID: 8300000, guid: 48d9a9ac96269ae4ca07f55c8bc781a4, type: 3}
+    pitch: 1
+    volume: 1
+    delay: 0
+    loop: 0
+  - name: blood3
+    audioClip: {fileID: 8300000, guid: 98c3f6be635876741af4c2f747a069aa, type: 3}
+    pitch: 1
+    volume: 1
+    delay: 0
+    loop: 0
+  - name: lazer1
+    audioClip: {fileID: 8300000, guid: 90b8da4b93126e744be84b436ea3d358, type: 3}
+    pitch: 1
+    volume: 0.104
+    delay: 0
+    loop: 0
+  - name: lazer2
+    audioClip: {fileID: 8300000, guid: 767328168357a9644a44fad100fe57d6, type: 3}
+    pitch: 1
+    volume: 0.566
+    delay: 0
+    loop: 0
+  - name: lazer3
+    audioClip: {fileID: 8300000, guid: 752b4cedf6d0ba8468f78817d5bd4c20, type: 3}
+    pitch: 1
+    volume: 0.566
+    delay: 0
+    loop: 0
+  - name: explosion
+    audioClip: {fileID: 8300000, guid: c50b2d2dfccb98b4bbe77d42aa578983, type: 3}
+    pitch: 1
+    volume: 1
+    delay: 0
+    loop: 0
+  - name: explosion_wait
+    audioClip: {fileID: 8300000, guid: fe3ee063ca07d534891a289bbd06ac11, type: 3}
+    pitch: 1
+    volume: 1
+    delay: 0
+    loop: 0
+  - name: arrow_qskill
+    audioClip: {fileID: 8300000, guid: 52e5e53717de5bf4f93323515fd56f81, type: 3}
+    pitch: 1
+    volume: 0.791
+    delay: 0
+    loop: 0
 --- !u!1 &8439092388672957780
 GameObject:
   m_ObjectHideFlags: 0

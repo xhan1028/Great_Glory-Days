@@ -15,27 +15,27 @@ namespace Audio
 
     private AudioSource _bgmPlayer;
     
-    private float _bgmVol = 1f;
-    private float _sfxVol = 1f;
-    public float BGMVolume
-    {
-      get => _bgmVol;
-      set
-      {
-        _bgmVol = value;
-        _bgmPlayer.volume = value;
-      }
-    }
-
-    public float SFXVolume
-    {
-      get => _sfxVol;
-      set
-      {
-        _sfxVol = value;
-        _sfxPlayer.ForEach(src => src.volume = value);
-      }
-    }
+    // private float _bgmVol = 1f;
+    // private float _sfxVol = 1f;
+    // public float BGMVolume
+    // {
+    //   get => _bgmVol;
+    //   set
+    //   {
+    //     _bgmVol = value;
+    //     _bgmPlayer.volume = value;
+    //   }
+    // }
+    //
+    // public float SFXVolume
+    // {
+    //   get => _sfxVol;
+    //   set
+    //   {
+    //     _sfxVol = value;
+    //     _sfxPlayer.ForEach(src => src.volume = value);
+    //   }
+    // }
 
     public AudioData[] bgmDatas;
 
@@ -76,7 +76,7 @@ namespace Audio
           _sfxPlayer.Add(_sfxGO.AddComponent<AudioSource>());
 
         var player = _sfxPlayer.First(source => !source.isPlaying);
-        player.volume = _sfxVol;
+        // player.volume = _sfxVol;
         PlaySound(player, sound);
       }
       else
@@ -88,6 +88,7 @@ namespace Audio
       source.clip = audioData.audioClip;
       source.pitch = audioData.pitch;
       source.loop = audioData.loop;
+      source.volume = audioData.volume;
       source.PlayDelayed(delay + audioData.delay);
     }
   }
