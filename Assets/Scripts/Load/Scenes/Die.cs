@@ -13,6 +13,8 @@ namespace Load.Scenes
     
     public override void OnStart()
     {
+      StopBGM();
+      
       foreach (var go in visibleObjs)
       {
         go.SetActive(false);

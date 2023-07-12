@@ -1,5 +1,6 @@
 ﻿using System;
 using Audio;
+using Interact;
 using Manager;
 using ScreenEffect;
 using UI;
@@ -33,6 +34,7 @@ namespace Load.Scenes
     private void Start()
     {
       OnStart();
+      FindObjectOfType<InteractUI>().GetComponent<CanvasGroup>().alpha = 0;
     }
 
     protected static void StartScreenEffect(EffectOption effectOption, bool force = false)

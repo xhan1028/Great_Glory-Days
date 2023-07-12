@@ -159,7 +159,7 @@ namespace Character.Player.ArrowBattle
 
       if (hp <= 0)
       {
-        GameManager.Instance.Die();
+        GameManager.Instance.Die(manager.deadScene);
       }
     }
 

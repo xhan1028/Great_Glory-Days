@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Character.Player.ArrowBattle;
+using Load;
+using ScreenEffect;
 using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Direction = Character.Player.ArrowBattle.Direction;
 
 namespace BattleMode
 {
@@ -17,10 +20,14 @@ namespace BattleMode
     public int curCount;
 
     public float delay;
-    
+
     public float speed;
 
     public int phase = 0;
+
+    public string nextScene;
+
+    public string deadScene;
 
     [SerializeField]
     private Transform[] spawnLocate;
@@ -35,10 +42,10 @@ namespace BattleMode
 
     [SerializeField]
     private ProgressBar playerHpBar;
-    
+
     [SerializeField]
     private ProgressBar leftCountBar;
-    
+
     [SerializeField]
     private ProgressBar waitBar;
 
@@ -56,7 +63,7 @@ namespace BattleMode
 
     private void Start()
     {
-      StartPattern(spawnRoutines);
+      // StartPattern(spawnRoutines);
     }
 
     public void StartPattern(string[] pattern)
@@ -74,16 +81,17 @@ namespace BattleMode
       {
         if (phase == spawnRoutines.Length - 1)
         {
-          Debug.Log("Success");
+          SceneLoader.Instance.Load
+          (
+            nextScene,
+            new EffectOption(ScreenEffects.FadeOut),
+            new EffectOption(ScreenEffects.FadeIn)
+          );
         }
         else
         {
-          counter.StartCounting(3, () =>
-          {
-            Play(++phase);
-          });
+          counter.StartCounting(3, () => Play(++phase));
         }
-
       }
     }
 
@@ -116,7 +124,6 @@ namespace BattleMode
       }
 
       leftCountTMP.text = $"{maxCount - curCount}명 남음 - 페이즈 {phase + 1}";
-      
     }
 
     private IEnumerator PlayRoutine(string routine)
@@ -140,7 +147,7 @@ namespace BattleMode
           if (float.TryParse(s, out var changeSpeed))
             speed = changeSpeed;
         }
-        
+
         if (key.Contains('d'))
         {
           var s = key.Split('d')[1];

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -78,6 +79,7 @@ public class Player_Battles : MonoBehaviour
 
   private void Attack_Player()
   {
+    AudioManager.Instance.PlaySFX("sword");
     Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
     foreach (Collider2D boss_option in hitEnemies)

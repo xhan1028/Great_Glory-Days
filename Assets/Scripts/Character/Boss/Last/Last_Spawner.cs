@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Load.Scenes;
 using UnityEngine;
 
 public class Last_Spawner : MonoBehaviour
@@ -12,8 +13,8 @@ public class Last_Spawner : MonoBehaviour
     private GameObject enemyHpPrefab;
     [SerializeField]
     private Transform canvasTransform;
-    [SerializeField]
-    private Last_Bgm last_bgm;
+    // [SerializeField]
+    // private Last_Bgm last_bgm;
     [SerializeField]
     private GameObject Boss_Text;
     [SerializeField]
@@ -25,8 +26,11 @@ public class Last_Spawner : MonoBehaviour
     [SerializeField]
     private int maxEnemyCount = 100;
 
+    private LastBoss2 sceneStarter;
+
     private void Awake()
     {
+        sceneStarter = FindObjectOfType<LastBoss2>();
         Boss_Text.SetActive(false);
         panelBossHp.SetActive(false);
         boss.SetActive(false);
@@ -63,7 +67,8 @@ public class Last_Spawner : MonoBehaviour
 
     private IEnumerator SpawnBoss()
     {
-        last_bgm.BossBgm(BGMType.Boss);
+        // last_bgm.BossBgm(BGMType.Boss);
+        sceneStarter.BossBgm(Load.Scenes.BGMType.Boss);
         Boss_Text.SetActive(true);
         var sc = GameObject.Find("ScreenColor").GetComponent<Animator>();
         sc.Play("Effect");

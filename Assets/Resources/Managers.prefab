@@ -1031,6 +1031,18 @@ MonoBehaviour:
     volume: 1
     delay: 1
     loop: 1
+  - name: lastbosspaze2_1
+    audioClip: {fileID: 8300000, guid: 485be2fb3e208b949b36e221e4fdf513, type: 3}
+    pitch: 1
+    volume: 1
+    delay: 1
+    loop: 1
+  - name: lastbosspaze2_2
+    audioClip: {fileID: 8300000, guid: fbc09477d17ea7c498502f79d065ece2, type: 3}
+    pitch: 1
+    volume: 1
+    delay: 1
+    loop: 1
   sfxDatas:
   - name: sword
     audioClip: {fileID: 8300000, guid: 3cc4f16f06b396940a1d8006be363320, type: 3}

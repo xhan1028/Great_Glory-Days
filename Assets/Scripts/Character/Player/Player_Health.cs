@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,6 +27,8 @@ public class Player_Health : MonoBehaviour
 
     StartCoroutine(DamageAnimation());
 
+    
+    AudioManager.Instance.PlaySFX("hurt");
     cameraAnimator.Play("Hurt" + Random.Range(1,3));
 
     if (chr_health <= 0)
