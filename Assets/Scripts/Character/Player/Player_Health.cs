@@ -5,6 +5,7 @@ using Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Player_Health : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class Player_Health : MonoBehaviour
 
     StartCoroutine(DamageAnimation());
 
-    cameraAnimator.Play("Hurt");
+    cameraAnimator.Play("Hurt" + Random.Range(1,3));
 
     if (chr_health <= 0)
     {

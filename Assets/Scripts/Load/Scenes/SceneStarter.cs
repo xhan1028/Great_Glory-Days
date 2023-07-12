@@ -2,6 +2,7 @@
 using Audio;
 using Manager;
 using ScreenEffect;
+using UI;
 using UnityEngine;
 
 namespace Load.Scenes
@@ -10,14 +11,23 @@ namespace Load.Scenes
   {
     public virtual void OnStart()
     {
-      
     }
 
     private void Awake()
     {
-      if (FindObjectOfType<GameManager>() is not null) return;
-      var manager = Resources.Load<GameObject>("Managers");
-      Instantiate(manager).name = "Managers";
+      if (FindObjectOfType<GameManager>() is null)
+      {
+        var manager = Resources.Load<GameObject>("Managers");
+        Instantiate(manager).name = "Managers";
+      }
+
+      if (this is IScreenClickable screenClickable)
+      {
+        ScreenClick.Instance.SetActive(true);
+        ScreenClick.Instance.onPointClick += screenClickable.OnScreenClick;
+      }
+      else
+        ScreenClick.Instance.SetActive(false);
     }
 
     private void Start()
@@ -39,5 +49,11 @@ namespace Load.Scenes
 
     protected static void ChangeScene(string sceneName, EffectOption beforeEffect, EffectOption afterEffect)
       => SceneLoader.Instance.Load(sceneName, beforeEffect, afterEffect);
+
+    private void OnDestroy()
+    {
+      if (this is IScreenClickable screenClickable)
+        ScreenClick.Instance.onPointClick -= screenClickable.OnScreenClick;
+    }
   }
 }

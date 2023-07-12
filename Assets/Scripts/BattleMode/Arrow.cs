@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Character.Player.ArrowBattle;
+using UI;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -29,6 +30,15 @@ namespace BattleMode
     [SerializeField]
     private string[] spawnRoutines;
 
+    [SerializeField]
+    private ProgressBar playerHpBar;
+    
+    [SerializeField]
+    private ProgressBar leftCountBar;
+    
+    [SerializeField]
+    private ProgressBar waitBar;
+
     private void Awake()
     {
       poolManager = FindObjectOfType<ArrowEnemyPoolManager>();
@@ -37,7 +47,7 @@ namespace BattleMode
 
     private void Start()
     {
-      Play(0);
+      Play(2);
     }
 
     private void Enemy_OnReleased(ArrowEnemy obj)
@@ -54,6 +64,12 @@ namespace BattleMode
     private int GetMaxCount(string routine)
     {
       return routine.Count(c => c == 'L' || c == 'R' || c == 'U' || c == 'D');
+    }
+
+    private void Update()
+    {
+      playerHpBar.maxValue = player.maxHp;
+      playerHpBar.value = player.hp;
     }
 
     private IEnumerator PlayRoutine(string routine)

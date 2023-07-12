@@ -153,6 +153,7 @@ MonoBehaviour:
   videoClips:
   - {fileID: 32900000, guid: 2cece9f506bb24340932a2cd84de6821, type: 3}
   - {fileID: 32900000, guid: 10d3733e405cac247a9bf7b84f07246a, type: 3}
+  - {fileID: 32900000, guid: 13b3ff71245af704ba2c5e5058c7359b, type: 3}
 --- !u!1 &1249627963975866103
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +304,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &1571387190156530784
 MonoBehaviour:

@@ -34,15 +34,7 @@ public class Player_Battles : MonoBehaviour
 
   private void Awake()
   {
-    ScreenClick.Instance.onPointClick += ScreenClick_OnPointClick;
-  }
-
-  private void ScreenClick_OnPointClick(PointerEventData eventdata)
-  {
-    if (curEndTime <= 0)
-    {
-      Attack();
-    }
+    // ScreenClick.Instance.onPointClick += ScreenClick_OnPointClick;
   }
 
   public void Attack()

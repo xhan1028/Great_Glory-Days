@@ -24,7 +24,7 @@ public class Player_Movement : MonoBehaviour
 	private Rigidbody2D rigid;
 
 	public GameObject chatUI;
-	public bool canMove => !chatUI.gameObject.activeSelf;
+	// public bool canMove => chatUI is null ? true : !chatUI.gameObject.activeSelf;
 
 	private void Awake()
 	{
@@ -33,9 +33,9 @@ public class Player_Movement : MonoBehaviour
 
 	void Update()
 	{
-		if (chatUI is null) return;
-		if (!canMove && horizontalMove != 0) horizontalMove = 0;
-		if (!canMove) return;
+		// if (chatUI is null) return;
+		// if (!canMove && horizontalMove != 0) horizontalMove = 0;
+		// if (!canMove) return;
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
 		//animator.SetFloat("Speed", Mathf.Abs(horizontalMove));

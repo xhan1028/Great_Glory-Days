@@ -51,7 +51,7 @@ public class Last_BossManager : MonoBehaviour
 
 		while (true)
 		{
-			if (lasthp.CurrentHP <= lasthp.MaxHP * 0.7f)
+			if (lasthp.CurrentHP <= lasthp.MaxHP * 0.8f)
 			{
 				Lbosspattern.StopFiring(AttackType.LastBossWeapon);
 				ChangeState(BossState.Phase02);

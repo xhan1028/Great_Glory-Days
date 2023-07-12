@@ -11,5 +11,7 @@ namespace UI
     public event PointerEventListener onPointClick;
     
     public void OnPointerClick(PointerEventData eventData) => onPointClick?.Invoke(eventData);
+
+    public void SetActive(bool active) => gameObject.SetActive(active);
   }
 }

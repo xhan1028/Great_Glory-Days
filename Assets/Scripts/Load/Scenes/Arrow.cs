@@ -1,21 +1,18 @@
+using Character.Player.ArrowBattle;
 using UI;
 using UnityEngine.EventSystems;
 
 namespace Load.Scenes
 {
-  public class SamuraiBattle : SceneStarter, IScreenClickable
+  public class Arrow : SceneStarter ,IScreenClickable
   {
-    public Player_Battles player;
-    
-    public override void OnStart()
-    {
-      PlayBGM("samurai");
-    }
+    public ArrowPlayer player;
     
     public void OnScreenClick(PointerEventData eventData)
     {
       player.Attack();
     }
+    
     
   }
 }

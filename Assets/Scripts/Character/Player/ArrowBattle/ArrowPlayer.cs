@@ -52,17 +52,17 @@ namespace Character.Player.ArrowBattle
 
     private void Awake()
     {
-      ScreenClick.Instance.onPointClick += ScreenClick_OnPointClick;
+      // ScreenClick.Instance.onPointClick += ScreenClick_OnPointClick;
       cameraAnimator = FindObjectOfType<UnityEngine.Camera>().GetComponent<Animator>();
       hp = maxHp;
     }
 
-    private void ScreenClick_OnPointClick(PointerEventData eventdata)
-    {
-      Attack();
-    }
+    // private void ScreenClick_OnPointClick(PointerEventData eventdata)
+    // {
+    //   Attack();
+    // }
 
-    private void Attack()
+    public void Attack()
     {
       var hit = Physics2D.OverlapBoxAll((Vector2)hitBox.transform.position + hitBox.offset, hitBox.size, 0f);
 
@@ -75,7 +75,7 @@ namespace Character.Player.ArrowBattle
 
     private void OnDestroy()
     {
-      ScreenClick.Instance.onPointClick -= ScreenClick_OnPointClick;
+      // ScreenClick.Instance.onPointClick -= ScreenClick_OnPointClick;
     }
 
     public void TakeDamage()
