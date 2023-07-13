@@ -25,12 +25,10 @@ namespace Manager
     }
 
     public void GoToMain()
-      => SceneLoader.Instance.Load
-      (
-        "Title_Main",
-        ScreenEffects.FadeOut,
-        ScreenEffects.FadeIn
-      );
+    {
+      ToggleOptionPanel();
+      SceneLoader.Instance.Load("Title_Main");
+    }
 
     public void ToggleOptionPanel()
     {
