@@ -1043,6 +1043,12 @@ MonoBehaviour:
     volume: 1
     delay: 1
     loop: 1
+  - name: chp1
+    audioClip: {fileID: 8300000, guid: c0ddbbcf2f36a0644a8bea908268574a, type: 3}
+    pitch: 1
+    volume: 1
+    delay: 1
+    loop: 1
   sfxDatas:
   - name: sword
     audioClip: {fileID: 8300000, guid: 3cc4f16f06b396940a1d8006be363320, type: 3}
@@ -1107,7 +1113,7 @@ MonoBehaviour:
   - name: arrow_qskill
     audioClip: {fileID: 8300000, guid: 52e5e53717de5bf4f93323515fd56f81, type: 3}
     pitch: 1
-    volume: 0.791
+    volume: 1
     delay: 0
     loop: 0
 --- !u!1 &8439092388672957780

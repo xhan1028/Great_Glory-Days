@@ -60,6 +60,7 @@ namespace UI
       {
         callback.Invoke();
         isCounting = false;
+        time = 0;
       }
       else
       {

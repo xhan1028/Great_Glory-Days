@@ -103,18 +103,19 @@ namespace Character.Player.ArrowBattle
 
     private void OnESkill()
     {
+      animator.SetTrigger("skill");
       AudioManager.Instance.PlaySFX("arrow_qskill");
 
       qSkillPoolManager.Get(obj =>
       {
         obj.transform.position = player.transform.position;
         obj.transform.rotation = Quaternion.Euler(0f, 0f, curZ);
-        Debug.Log(animator.GetFloat("z"));
       });
     }
 
     private void OnQSkill()
     {
+      animator.SetTrigger("skill");
       AudioManager.Instance.PlaySFX("arrow_qskill");
       for (var i = 0; i < 360; i += 90)
       {

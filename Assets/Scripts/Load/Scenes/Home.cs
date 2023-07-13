@@ -23,7 +23,7 @@ namespace Load.Scenes
         {
           var arrowManager = FindObjectOfType<BattleMode.Arrow>();
 
-          arrowManager.nextScene = "Samurai_Battle";
+          arrowManager.nextScene = "Chp1";
           arrowManager.deadScene = "Home";
           arrowManager.StartPattern(new []
           {

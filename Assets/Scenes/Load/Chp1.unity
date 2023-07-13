@@ -397,8 +397,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 314623919}
+  - component: {fileID: 314623920}
   m_Layer: 0
-  m_Name: Loads
+  m_Name: SceneStarter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -420,6 +421,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &314623920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314623918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4838741758654568888635ba40c77364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &411664317
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &570485917
 AudioSource:
   m_ObjectHideFlags: 0
@@ -851,9 +864,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051991341}
-        m_TargetAssemblyTypeName: Samurai_Retry, Assembly-CSharp
-        m_MethodName: Samurai_Load
+      - m_Target: {fileID: 314623920}
+        m_TargetAssemblyTypeName: Load.Scenes.Chp1, Assembly-CSharp
+        m_MethodName: GoBattle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
