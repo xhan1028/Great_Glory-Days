@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Load/Chp2.unity
     guid: 5c98d0a299ec0a141869921e1f6b793a
   - enabled: 1
+    path: Assets/Scenes/Load/Chp3.unity
+    guid: ae4691f3261debb49bd066ea284009d7
+  - enabled: 1
+    path: Assets/Scenes/Load/Chp4.unity
+    guid: 451be2441dce70b4db52572953b56aa4
+  - enabled: 1
     path: Assets/Scenes/Helper.unity
     guid: 8745c16f80e5480429249dca790fef79
   - enabled: 1

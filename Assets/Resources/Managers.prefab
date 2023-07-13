@@ -1403,6 +1403,12 @@ MonoBehaviour:
     volume: 0.755
     delay: 1
     loop: 1
+  - name: Chp4
+    audioClip: {fileID: 8300000, guid: ceb43b4e72a94b044acfb6b4f0106fc9, type: 3}
+    pitch: 1
+    volume: 0.755
+    delay: 1
+    loop: 1
   sfxDatas:
   - name: sword
     audioClip: {fileID: 8300000, guid: 3cc4f16f06b396940a1d8006be363320, type: 3}
