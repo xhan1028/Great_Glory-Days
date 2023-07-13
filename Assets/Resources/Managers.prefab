@@ -1368,7 +1368,7 @@ MonoBehaviour:
     delay: 1
     loop: 1
   - name: lastbosspaze2_1
-    audioClip: {fileID: 8300000, guid: 485be2fb3e208b949b36e221e4fdf513, type: 3}
+    audioClip: {fileID: 8300000, guid: 6b1e84f760dc0b243bd67bc6cdbefea1, type: 3}
     pitch: 1
     volume: 1
     delay: 1
@@ -1385,6 +1385,10 @@ MonoBehaviour:
     volume: 1
     delay: 1
     loop: 1
+  - name: Middle1
+    audioClip: {fileID: 8300000, guid: 983fe499255cf1a418c242a8429d9210, type: 3}
+    pitch: 1
+    volume: 0.603
   - name: home
     audioClip: {fileID: 8300000, guid: 07ecb58f1cb640e4e8061345406d3af6, type: 3}
     pitch: 1
