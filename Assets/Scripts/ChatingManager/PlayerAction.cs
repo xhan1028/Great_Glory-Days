@@ -14,6 +14,8 @@ public class PlayerAction : MonoBehaviour
   public LayerMask layermask;
   public float distance;
 
+  public Vector2 dir = Vector2.right;
+
   private void Awake()
   {
     chatManager = FindObjectOfType<ChatManager>();
@@ -21,13 +23,19 @@ public class PlayerAction : MonoBehaviour
 
   private void Update()
   {
+    if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+      dir = Vector2.left;
+    
+    if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+      dir = Vector2.right;
+
     if (Input.GetKeyDown(KeyCode.F) && scanObject != null)
     {
       chatManager.Action(scanObject);
     }
 
     Debug.DrawRay(transform.position, Vector2.right * distance, Color.green);
-    RaycastHit2D hit = Physics2D.Raycast(this.gameObject.transform.position, Vector2.right, distance, layermask);
+    RaycastHit2D hit = Physics2D.Raycast(this.gameObject.transform.position, dir, distance, layermask);
 
     if (hit.collider is not null)
     {

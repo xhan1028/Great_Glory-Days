@@ -35,6 +35,11 @@ namespace Load.Scenes
       );
     }
 
+    public override void OnStart()
+    {
+      PlayBGM("home");
+    }
+
     public void OnScreenClick(PointerEventData eventData)
     {
       player.Attack();

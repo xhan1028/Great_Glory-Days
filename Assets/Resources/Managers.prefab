@@ -1053,6 +1053,10 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 983fe499255cf1a418c242a8429d9210, type: 3}
     pitch: 1
     volume: 0.603
+  - name: home
+    audioClip: {fileID: 8300000, guid: 07ecb58f1cb640e4e8061345406d3af6, type: 3}
+    pitch: 1
+    volume: 1
     delay: 1
     loop: 1
   sfxDatas:
