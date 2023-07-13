@@ -1692,6 +1692,12 @@ MonoBehaviour:
     volume: 0.755
     delay: 1
     loop: 1
+  - name: Em_Middle3
+    audioClip: {fileID: 8300000, guid: e95570b0bf5531d4388f363e1b6a23d4, type: 3}
+    pitch: 1
+    volume: 0.459
+    delay: 1
+    loop: 1
   sfxDatas:
   - name: sword
     audioClip: {fileID: 8300000, guid: 3cc4f16f06b396940a1d8006be363320, type: 3}

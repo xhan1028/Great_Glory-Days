@@ -325,8 +325,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 014c19ceeb0e3ef4995ec7abe755979b, type: 2}
+  m_sharedMaterial: {fileID: 1079483398028934254, guid: 014c19ceeb0e3ef4995ec7abe755979b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -350,8 +350,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 76.43
-  m_fontSizeBase: 76.43
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1095750601}
-  health: 500
+  health: 360
   bloodPoolManager: {fileID: 284791299}
 --- !u!114 &1095750600
 MonoBehaviour:
@@ -1531,8 +1531,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.48, y: 1.92}
+  m_Offset: {x: -0.033506904, y: -0.005009132}
+  m_Size: {x: 0.5017458, y: 0.9438578}
   m_Direction: 0
 --- !u!50 &1095750603
 Rigidbody2D:

@@ -1481,7 +1481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1095750601}
-  health: 500
+  health: 280
   bloodPoolManager: {fileID: 1060776228}
 --- !u!114 &1095750600
 MonoBehaviour:
@@ -1531,8 +1531,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.48, y: 1.92}
+  m_Offset: {x: -0.07461742, y: 0}
+  m_Size: {x: 1.1118891, y: 1.9199997}
   m_Direction: 0
 --- !u!50 &1095750603
 Rigidbody2D:
