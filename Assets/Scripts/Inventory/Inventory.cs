@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject InventoryBaseObj;
+    public GameObject InventoryBaseObj;
         
-    public bool inventype = false;
+    private bool inventype = false;
 
     private void Update()
     {
@@ -15,12 +14,11 @@ public class Inventory : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                InventoryBaseObj.gameObject.SetActive(true);
+                InventoryBaseObj.SetActive(true);
                 inventype = true;
             }
         }
-
-        if (inventype == true)
+        else
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {

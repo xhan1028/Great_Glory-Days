@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 5635892643013320625}
   - component: {fileID: 2676128299202068031}
   m_Layer: 5
-  m_Name: Slot
+  m_Name: Slot_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,10 +187,10 @@ RectTransform:
   m_Father: {fileID: 7703671376993908001}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 225, y: -170}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2676128299202068028
 CanvasRenderer:
@@ -242,7 +242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c337af929046537478b4d91d3b352a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
   itemImage: {fileID: 2097805744585156842}
 --- !u!1 &7703671376136974244
 GameObject:
@@ -333,7 +332,7 @@ GameObject:
   - component: {fileID: 7703671376181292349}
   - component: {fileID: 7703671376181292346}
   m_Layer: 5
-  m_Name: Slot (3)
+  m_Name: Slot_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,10 +354,10 @@ RectTransform:
   m_Father: {fileID: 7703671376993908001}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 575, y: -480}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7703671376181292348
 CanvasRenderer:
@@ -410,7 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c337af929046537478b4d91d3b352a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
   itemImage: {fileID: 7703671376506206149}
 --- !u!1 &7703671376262494463
 GameObject:
@@ -425,7 +423,7 @@ GameObject:
   - component: {fileID: 7703671376262494336}
   - component: {fileID: 7703671376262494337}
   m_Layer: 5
-  m_Name: Slot (1)
+  m_Name: Slot_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,10 +445,10 @@ RectTransform:
   m_Father: {fileID: 7703671376993908001}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 575, y: -170}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7703671376262494339
 CanvasRenderer:
@@ -502,7 +500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c337af929046537478b4d91d3b352a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
   itemImage: {fileID: 7703671376136974246}
 --- !u!1 &7703671376313827140
 GameObject:
@@ -906,8 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20805bb0c3c0b704499daaaa4d62855c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go_InventoryBase: {fileID: 7703671377444032727}
-  go_SlotsParent: {fileID: 7703671376993907998}
+  InventoryBaseObj: {fileID: 7703671377444032727}
 --- !u!1 &7703671377151006019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,7 +1046,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7fa3726679758f741a6fc4099d662e32, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1075,7 +1071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7703671377444032726
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1221,7 +1217,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7703671377506138411}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7703671377728099481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,7 +1398,7 @@ GameObject:
   - component: {fileID: 7703671377984126588}
   - component: {fileID: 7703671377984126589}
   m_Layer: 5
-  m_Name: Slot (2)
+  m_Name: Slot_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1412,10 +1420,10 @@ RectTransform:
   m_Father: {fileID: 7703671376993908001}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 225, y: -480}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7703671377984126591
 CanvasRenderer:
@@ -1467,5 +1475,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c337af929046537478b4d91d3b352a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
   itemImage: {fileID: 7703671377728099483}

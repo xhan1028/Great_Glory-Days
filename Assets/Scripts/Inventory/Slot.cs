@@ -7,11 +7,11 @@ public class Slot : MonoBehaviour
 {
     public Image itemImage;  
 
-    private void SetColor(float _alpha)
+    public void SetColor(float _alpha)
     {
         Color color = itemImage.color;
         color.a = _alpha;
         itemImage.color = color;
     }
-
+    
 }
