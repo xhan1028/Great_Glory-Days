@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Audio;
 using Manager;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,19 +15,31 @@ public class Player_Health : MonoBehaviour
   public int chr_health = 100;
   //chr_health health;
 
+  public ProgressBar hpBar;
+
   private Animator cameraAnimator;
   
   private void Awake()
   {
     cameraAnimator = FindObjectOfType<UnityEngine.Camera>().GetComponent<Animator>();
+
+    if (hpBar is not null)
+    {
+      hpBar.maxValue = chr_health;
+      hpBar.value = chr_health;
+    }
   }
 
   public void TakeDamage(int damage)
   {
     chr_health -= damage;
+    
+    if (hpBar is not null)
+    {
+      hpBar.value = chr_health;
+    }
 
     StartCoroutine(DamageAnimation());
-
     
     AudioManager.Instance.PlaySFX("hurt");
     cameraAnimator.Play("Hurt" + Random.Range(1,3));
@@ -50,7 +63,7 @@ public class Player_Health : MonoBehaviour
   void Die()
   {
     // SceneManager.LoadScene("Die");
-    GameManager.Instance.Die(SceneManager.GetActiveScene().name);
+    GameManager.Instance.Die();
   }
 
   IEnumerator DamageAnimation()
