@@ -9,7 +9,6 @@ TagManager:
   - InteractableObject
   - Boss
   - PlayerAttack
-  - Item
   layers:
   - Default
   - TransparentFX
@@ -20,7 +19,7 @@ TagManager:
   - Ground
   - Player
   - Enemy
-  - Item
+  - 
   - 
   - 
   - 
