@@ -24,7 +24,7 @@ namespace UI
 
     public void StartTimer(float second, Action callback, float accentSecond = 10)
     {
-      currentTime = second;
+      currentTime = second + 4;
       this.callback = callback;
       accent = accentSecond;
       isActive = true;
