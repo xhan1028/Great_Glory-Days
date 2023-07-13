@@ -23,7 +23,7 @@ public class Last_BossPattern : MonoBehaviour
     private IEnumerator LastBossWeapon()
     {
         float attackRate = 0.8f;
-        int count = 23;
+        int count = 20;
         float intervalAngle = 360 / count; // 보스 발사체 사이의 각도
         float weightAngle = 0; // 같은 위치로 발사되지 않게 설정
 
