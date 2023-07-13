@@ -13,7 +13,7 @@ namespace Load.Scenes
     public override void OnStart()
     {
       PlayBGM("samurai");
-      timer.StartTimer(60 * 1, OnTimerEnd);
+      timer.StartTimer(30, OnTimerEnd);
     }
 
     private void OnTimerEnd()
