@@ -7,14 +7,17 @@ using Load;
 using ScreenEffect;
 using TMPro;
 using UI;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Direction = Character.Player.ArrowBattle.Direction;
 
 namespace BattleMode
 {
-  public class Arrow : MonoBehaviour
+  public partial class Arrow : MonoBehaviour
   {
+    public static string code;
+
     public int maxCount;
 
     public int curCount;
@@ -55,28 +58,64 @@ namespace BattleMode
     [SerializeField]
     private Count counter;
 
+    private PhaseInfo phaseInfo;
+
+    [NonSerialized]
+    public bool isCharging;
+
+    private int temp;
+
+    private float scale = minScale;
+
+    private Color color = normalColor;
+
+    private static readonly Color normalColor = Color.black;
+    private static readonly Color hitColor = Color.red;
+
+    private const float maxScale = 74f;
+    private const float minScale = 36f;
+
     private void Awake()
     {
+      phaseInfo = FindObjectOfType<PhaseInfo>();
       poolManager = FindObjectOfType<ArrowEnemyPoolManager>();
+      ArrowEnemy.onTakeDamage += Enemy_OnTakeDamage;
       poolManager.onRelease += Enemy_OnReleased;
+
+      if (string.IsNullOrEmpty(code))
+        code = "start";
+    }
+
+    private void Enemy_OnTakeDamage(ArrowEnemy sender)
+    {
+      scale = maxScale;
+      color = hitColor;
+      
+      curCount++;
+    }
+
+    private void OnDestroy()
+    {
+      ArrowEnemy.onTakeDamage -= Enemy_OnReleased;
     }
 
     private void Start()
     {
-      // StartPattern(spawnRoutines);
+      StartPattern(code);
     }
 
-    public void StartPattern(string[] pattern)
+    private void StartPattern(string code)
     {
-      spawnRoutines = pattern;
+      spawnRoutines = patterns[code];
       phase = 0;
       Play(phase);
     }
 
     private void Enemy_OnReleased(ArrowEnemy obj)
     {
-      curCount++;
-
+      if (obj.isTrigger)
+        curCount++;
+      
       if (curCount == maxCount)
       {
         if (phase == spawnRoutines.Length - 1)
@@ -90,16 +129,24 @@ namespace BattleMode
         }
         else
         {
-          counter.StartCounting(3, () => Play(++phase));
+          Play(++phase);
         }
       }
     }
 
     public void Play(int index)
     {
-      maxCount = GetMaxCount(spawnRoutines[index]);
+      isCharging = true;
+      temp = index;
+      counter.StartCounting(3, () => phaseInfo.StartAnim());
+    }
+
+    public void Play2()
+    {
+      maxCount = GetMaxCount(spawnRoutines[temp]);
       curCount = 0;
-      StartCoroutine(PlayRoutine(spawnRoutines[index]));
+      isCharging = false;
+      StartCoroutine(PlayRoutine(spawnRoutines[temp]));
     }
 
     private int GetMaxCount(string routine)
@@ -112,7 +159,7 @@ namespace BattleMode
       playerHpBar.maxValue = player.maxHp;
       playerHpBar.value = player.hp;
 
-      if (counter.isCounting)
+      if (isCharging)
       {
         leftCountBar.maxValue = counter.maxTime;
         leftCountBar.value = counter.time;
@@ -123,7 +170,14 @@ namespace BattleMode
         leftCountBar.value = maxCount - curCount;
       }
 
-      leftCountTMP.text = $"{maxCount - curCount}명 남음 - 페이즈 {phase + 1}";
+      leftCountTMP.text =
+        $"<color=#{color.ToHexString()}><size={scale}>{maxCount - curCount}명</size> 남음 - 페이즈 {phase + 1}</color>";
+
+      if (scale > minScale)
+      {
+        scale = Mathf.Lerp(scale, minScale, Time.deltaTime * 7f);
+        color = Color.Lerp(color, normalColor, Time.deltaTime * 7f);
+      }
     }
 
     private IEnumerator PlayRoutine(string routine)

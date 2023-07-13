@@ -14,8 +14,6 @@ namespace UI
     
     private Action callback;
 
-    private string zeroText;
-
     public bool isCounting;
 
     public float time;
@@ -30,12 +28,12 @@ namespace UI
       animator = GetComponent<Animator>();
     }
 
-    public void StartCounting(int count, Action callBack, string zeroText = "Start")
+    public void StartCounting(int count, Action callBack)
     {
-      Set(count);
+      Set(count - 1);
+      time = 0;
       callback = callBack;
-      this.zeroText = zeroText;
-      maxTime = (count + 1) * Max;
+      maxTime = count * Max;
       isCounting = true;
     }
 
@@ -50,7 +48,7 @@ namespace UI
     private void Set(int count)
     {
       curCount = count;
-      textMeshProUGUI.text = curCount == 0 ? zeroText : curCount.ToString();
+      textMeshProUGUI.text = (curCount + 1).ToString();
       animator.Play("Count");
     }
 
@@ -60,7 +58,6 @@ namespace UI
       {
         callback.Invoke();
         isCounting = false;
-        time = 0;
       }
       else
       {

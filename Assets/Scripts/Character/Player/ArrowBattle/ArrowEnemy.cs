@@ -10,7 +10,12 @@ namespace Character.Player.ArrowBattle
 {
   public class ArrowEnemy : PoolObject<ArrowEnemy>
   {
+    public delegate void ArrowEnemyEventListener(ArrowEnemy sender);
+
+    public static event ArrowEnemyEventListener onTakeDamage;
+    
     public float speed = 3f;
+    
     public bool walking = true;
 
     [SerializeField]
@@ -22,6 +27,9 @@ namespace Character.Player.ArrowBattle
 
     private bool isDied;
 
+    [NonSerialized]
+    public bool isTrigger = false;
+
     private void Awake()
     {
       anim = GetComponent<Animator>();
@@ -31,6 +39,7 @@ namespace Character.Player.ArrowBattle
     public void TakeDamage()
     {
       // Release();
+      onTakeDamage?.Invoke(this);
       if (isDied) return;
       isDied = true;
       anim.Play("Die");
@@ -50,6 +59,7 @@ namespace Character.Player.ArrowBattle
     private void OnTriggerEnter2D(Collider2D col)
     {
       if (isDied) return;
+      isTrigger = true;
       if (col.transform.CompareTag("Player"))
       {
         arrowManager.player.TakeDamage();
@@ -65,6 +75,7 @@ namespace Character.Player.ArrowBattle
     public override void OnGetAfter()
     {
       base.OnGetAfter();
+      isTrigger = false;
       isDied = false;
       anim.Play("None");
     }

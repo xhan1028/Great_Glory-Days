@@ -57,12 +57,12 @@ public class Boss_Option : MonoBehaviour
 
                 arrowManager.nextScene = "Last_Boss2";
                 arrowManager.deadScene = "Home";
-                arrowManager.StartPattern(new []
-                {
-                    "d0.5ds3s L R R U D  R L  U L D R U  U D L",
-                    "d0.44ds3s U U  L L R L L U D   U D L U R L D U",
-                    "d0.4ds3s RLUD R R R R L L U L L U L R  LR L U D L U RL D L U D L R DL U L"
-                });
+                // arrowManager.StartPattern(new []
+                // {
+                //     "d0.5ds3s L R R U D  R L  U L D R U  U D L",
+                //     "d0.44ds3s U U  L L R L L U D   U D L U R L D U",
+                //     "d0.4ds3s RLUD R R R R L L U L L U L R  LR L U D L U RL D L U D L R DL U L"
+                // });
             }
         );
     }
