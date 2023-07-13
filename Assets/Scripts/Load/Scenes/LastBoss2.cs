@@ -1,4 +1,7 @@
+using Character.Player.Last_Boss;
+using UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Load.Scenes
 {
@@ -7,10 +10,14 @@ namespace Load.Scenes
     Screen = 0, Boss
   }
 
-  public class LastBoss2 : SceneStarter
+  public class LastBoss2 : SceneStarter, IScreenClickable
   {
+    public static bool help = false;
+    
     [SerializeField]
     private string[] bgms;
+
+    private PlayerWeapon playerWeapon;
 
     public void BossBgm(BGMType index)
     {
@@ -19,7 +26,22 @@ namespace Load.Scenes
 
     public override void OnStart()
     {
+      playerWeapon = FindObjectOfType<PlayerWeapon>();
       BossBgm(BGMType.Screen);
+    }
+
+    public override void OnLoadEnd()
+    {
+      if (!help)
+      {
+        help = true;
+        ChatManager.Instance.Talk("W,D : 이동\nSpace : 점프\nMouse Click : 공격");
+      }
+    }
+
+    public void OnScreenClick(PointerEventData eventData)
+    {
+      playerWeapon.TryAttack();
     }
   }
 }

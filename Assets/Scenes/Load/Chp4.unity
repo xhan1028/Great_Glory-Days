@@ -398,6 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 314623919}
   - component: {fileID: 314623920}
+  - component: {fileID: 314623921}
   m_Layer: 0
   m_Name: SceneStarter
   m_TagString: Untagged
@@ -433,6 +434,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da833ddf63052044b90ce647c933dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &314623921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314623918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b114380fae48a087c542d45b00e332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgm: Chp4
+  nextScene: Middle_3_Battle
 --- !u!1 &411664317
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,8 +879,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Load.Scenes.Chp1, Assembly-CSharp
+      - m_Target: {fileID: 314623921}
+        m_TargetAssemblyTypeName: Load.Scenes.Chp, Assembly-CSharp
         m_MethodName: GoBattle
         m_Mode: 1
         m_Arguments:

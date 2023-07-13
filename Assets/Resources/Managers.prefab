@@ -286,9 +286,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoClips:
   - {fileID: 32900000, guid: 2cece9f506bb24340932a2cd84de6821, type: 3}
-  - {fileID: 32900000, guid: 10d3733e405cac247a9bf7b84f07246a, type: 3}
+  - {fileID: 32900000, guid: df93975d908e1bc4896d4aecbcf7dde1, type: 3}
   - {fileID: 32900000, guid: 13b3ff71245af704ba2c5e5058c7359b, type: 3}
   - {fileID: 32900000, guid: 0979d08d18a164843b425aa4e6b2f9eb, type: 3}
+  - {fileID: 32900000, guid: 65f3050c468855c44852a482e7b6f0c7, type: 3}
 --- !u!1 &1249627963975866103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,6 +1761,12 @@ MonoBehaviour:
     delay: 0
     loop: 0
   - name: arrow_qskill
+    audioClip: {fileID: 8300000, guid: 52e5e53717de5bf4f93323515fd56f81, type: 3}
+    pitch: 1
+    volume: 1
+    delay: 0
+    loop: 0
+  - name: slash
     audioClip: {fileID: 8300000, guid: 52e5e53717de5bf4f93323515fd56f81, type: 3}
     pitch: 1
     volume: 1

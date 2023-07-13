@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Character.Player.Last_Boss;
 using UnityEngine;
 
 public enum ItemType

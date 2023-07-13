@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NightMare_Ui : MonoBehaviour
+namespace Character.Boss
 {
-	public Boss_Option boss_option;
-	public Slider slider;
-
-	void Start()
+	public class NightMare_Ui : MonoBehaviour
 	{
-		slider.maxValue = boss_option.health;
-	}
+		public Boss_Option boss_option;
+		public Slider slider;
 
-	void Update()
-	{
-		slider.value = boss_option.health;
+		void Start()
+		{
+			slider.maxValue = boss_option.health;
+		}
+
+		void Update()
+		{
+			slider.value = boss_option.health;
+		}
 	}
 }

@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+using Pool;
 using UnityEngine;
 
-public class Last_Damge_Obj : MonoBehaviour
+namespace Character.Objects
 {
+  public class Last_Damge_Obj : PoolObject<Last_Damge_Obj>
+  {
     [SerializeField]
     private int damage = 10;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            collision.GetComponent<PlayerHp>().TakeDamage(damage);
-            Destroy(gameObject);
-        }
+      if (collision.CompareTag("Player"))
+      {
+        collision.GetComponent<PlayerHp>().TakeDamage(damage);
+        Release();
+      }
     }
+  }
 }

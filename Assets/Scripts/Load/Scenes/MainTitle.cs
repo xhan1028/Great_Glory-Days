@@ -12,6 +12,7 @@ namespace Load.Scenes
     {
       StartScreenEffect(new EffectOption(ScreenEffects.FadeIn, 3f, 1.5f));
       PlayBGM("main");
+      LastBoss2.help = false;
     }
 
     public void GoToHelper() =>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Load.Scenes;
 using Manager;
 using ScreenEffect;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Load
     public delegate void SceneEventListener(string afterChangeScene);
 
     public event SceneEventListener onSceneChanged;
+    public event SceneEventListener onSceneChangedAndEndTransition;
 
     public bool isLoading { get; private set; }
 
@@ -71,7 +73,7 @@ namespace Load
       var async = SceneManager.LoadSceneAsync(sceneName);
       yield return async;
       onSceneChanged?.Invoke(sceneName);
-      
+
       beforeEffectAfterAction?.Invoke();
 
       if (afterEffect is not null)
@@ -81,6 +83,7 @@ namespace Load
       }
 
       afterEffectAfterAction?.Invoke();
+      onSceneChangedAndEndTransition?.Invoke(sceneName);
 
       isLoading = false;
     }

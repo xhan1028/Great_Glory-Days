@@ -1,25 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public enum BGMType { Screen = 0, Boss }
-
-public class Last_Bgm : MonoBehaviour
+namespace Character.Boss.Last
 {
-	[SerializeField]
-	private AudioClip[] bgmclips;
-	private AudioSource audiosource;
+  public enum BGMType
+  {
+    Screen = 0, Boss
+  }
 
-	private void  Awake()
-	{
-		audiosource = GetComponent<AudioSource>();
-	}
+  public class Last_Bgm : MonoBehaviour
+  {
+    [SerializeField]
+    private AudioClip[] bgmclips;
 
-	public void BossBgm(BGMType index)
-	{
-		audiosource.Stop();
+    private AudioSource audiosource;
 
-		audiosource.clip = bgmclips[(int)index];
-		audiosource.Play();
-	}
+    private void Awake()
+    {
+      audiosource = GetComponent<AudioSource>();
+    }
+
+    public void BossBgm(BGMType index)
+    {
+      audiosource.Stop();
+
+      audiosource.clip = bgmclips[(int) index];
+      audiosource.Play();
+    }
+  }
 }

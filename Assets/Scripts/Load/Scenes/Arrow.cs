@@ -18,6 +18,9 @@ namespace Load.Scenes
       player.Attack();
     }
     
-    
+    public override void OnLoadEnd()
+    {
+      FindObjectOfType<BattleMode.Arrow>().StartPattern(BattleMode.Arrow.code);
+    }
   }
 }

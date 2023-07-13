@@ -1,69 +1,86 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Audio;
+using BattleMode;
+using Cinema;
 using Load;
 using Particle;
 using ScreenEffect;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Boss_Option : MonoBehaviour
+namespace Character.Boss
 {
+  public class Boss_Option : MonoBehaviour
+  {
+    public string type;
+
     public Animator animator;
 
     public int health = 500;
-  //  int currentHealth;
+    //  int currentHealth;
 
     //void Start()
     //{
-        //currentHealth = maxHealth;
-   // }
+    //currentHealth = maxHealth;
+    // }
 
-   [SerializeField]
-   private ParticlePoolManager bloodPoolManager;
+    [SerializeField]
+    protected ParticlePoolManager bloodPoolManager;
 
-   public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
-        health -= damage;
-        bloodPoolManager.Get(obj => obj.transform.position = transform.position);
-        AudioManager.Instance.PlaySFX("blood" + Random.Range(1,4));
+      health -= damage;
+      bloodPoolManager.Get(obj => obj.transform.position = transform.position);
+      AudioManager.Instance.PlaySFX("blood" + Random.Range(1, 4));
 
-        animator.SetTrigger("Hurt");
+      animator.SetTrigger("Hurt");
 
-        if(health <= 0)
-        {
-            Die();
-        }
+      if (health <= 0)
+      {
+        Die();
+      }
     }
 
-    void Die()
+    private void Start()
     {
-        Debug.Log("dead");
+      if (type == "Chp1")
+      {
+        ChatManager.Instance.Talk("W,D : 이동\nSpace : 점프\nMouse Click : 공격");
+      }
+    }
 
-        animator.SetBool("IsDead", true);
+    protected virtual void Die()
+    {
+      Debug.Log("dead");
 
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-        
+      animator.SetBool("IsDead", true);
+
+      GetComponent<Collider2D>().enabled = false;
+      this.enabled = false;
+
+      LoadNext();
+    }
+
+    protected void LoadNext()
+    {
+      if (Arrow.arrowData.ContainsKey(type))
+      {
+        var data = Arrow.arrowData[type];
+        Arrow.code = data.code;
+        Arrow.nextScene = data.nextScene;
         SceneLoader.Instance.Load
         (
-            "ArrowMode",
-            new EffectOption(ScreenEffects.FadeOut),
-            new EffectOption(ScreenEffects.FadeIn),
-            () =>
-            {
-                var arrowManager = FindObjectOfType<BattleMode.Arrow>();
-
-                arrowManager.nextScene = "Last_Boss2";
-                arrowManager.deadScene = "Home";
-                // arrowManager.StartPattern(new []
-                // {
-                //     "d0.5ds3s L R R U D  R L  U L D R U  U D L",
-                //     "d0.44ds3s U U  L L R L L U D   U D L U R L D U",
-                //     "d0.4ds3s RLUD R R R R L L U L L U L R  LR L U D L U RL D L U D L R DL U L"
-                // });
-            }
+          "ArrowMode",
+          new EffectOption(ScreenEffects.FadeOut),
+          new EffectOption(ScreenEffects.FadeIn)
         );
+      }
+      else if (Arrow.cinemaData.ContainsKey(type))
+      {
+        var data = Arrow.cinemaData[type];
+        
+        CinemaManager.Instance.Play(data.code, data.nextScene);
+      }
     }
+  }
 }

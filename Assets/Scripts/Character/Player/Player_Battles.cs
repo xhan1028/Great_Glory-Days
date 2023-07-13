@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Audio;
+using Character.Boss;
 using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;

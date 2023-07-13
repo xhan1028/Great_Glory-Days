@@ -1480,6 +1480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136264bc80efbee418b4a30516983d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Chp3
   animator: {fileID: 1095750601}
   health: 440
   bloodPoolManager: {fileID: 311357037}

@@ -1,58 +1,59 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BossWeapon : MonoBehaviour
+namespace Character.Boss
 {
-	public int attackDamage = 20;
-	public int enragedAttackDamage = 40;
-
-	public Vector3 attackOffset;
-	public float attackRange = 1f;
-	public LayerMask attackMask;
-
-	public void Attack()
+	public class BossWeapon : MonoBehaviour
 	{
-		Vector3 pos = transform.position;
-		pos += transform.right * attackOffset.x;
-		pos += transform.up * attackOffset.y;
+		public int attackDamage = 20;
+		public int enragedAttackDamage = 40;
 
-		Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-		if (colInfo != null)
+		public Vector3 attackOffset;
+		public float attackRange = 1f;
+		public LayerMask attackMask;
+
+		public void Attack()
 		{
-			colInfo.GetComponent<Player_Health>().TakeDamage(attackDamage);
+			Vector3 pos = transform.position;
+			pos += transform.right * attackOffset.x;
+			pos += transform.up * attackOffset.y;
+
+			Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+			if (colInfo != null)
+			{
+				colInfo.GetComponent<Player_Health>().TakeDamage(attackDamage);
+			}
+			//SfxCtr1.SoundPlay();
 		}
-		//SfxCtr1.SoundPlay();
-	}
 
-	public void EnragedAttack()
-	{
-		Vector3 pos = transform.position;
-		pos += transform.right * attackOffset.x;
-		pos += transform.up * attackOffset.y;
-
-		Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-		if (colInfo != null)
+		public void EnragedAttack()
 		{
-			colInfo.GetComponent<Player_Health>().TakeDamage(enragedAttackDamage);
+			Vector3 pos = transform.position;
+			pos += transform.right * attackOffset.x;
+			pos += transform.up * attackOffset.y;
+
+			Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+			if (colInfo != null)
+			{
+				colInfo.GetComponent<Player_Health>().TakeDamage(enragedAttackDamage);
+			}
 		}
-	}
 
-	public void StopMove()
-	{
-	}
+		public void StopMove()
+		{
+		}
 
-	public void StartMove()
-	{
+		public void StartMove()
+		{
 		
-	}
+		}
 
-	void OnDrawGizmosSelected()
-	{
-		Vector3 pos = transform.position;
-		pos += transform.right * attackOffset.x;
-		pos += transform.up * attackOffset.y;
+		void OnDrawGizmosSelected()
+		{
+			Vector3 pos = transform.position;
+			pos += transform.right * attackOffset.x;
+			pos += transform.up * attackOffset.y;
 
-		Gizmos.DrawWireSphere(pos, attackRange);
+			Gizmos.DrawWireSphere(pos, attackRange);
+		}
 	}
 }

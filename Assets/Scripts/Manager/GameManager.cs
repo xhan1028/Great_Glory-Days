@@ -27,7 +27,7 @@ namespace Manager
     public void GoToMain()
       => SceneLoader.Instance.Load
       (
-        "Main_Title",
+        "Title_Main",
         ScreenEffects.FadeOut,
         ScreenEffects.FadeIn
       );

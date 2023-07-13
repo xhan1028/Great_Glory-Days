@@ -18,6 +18,8 @@ namespace BattleMode
   {
     public static string code;
 
+    public static string nextScene;
+
     public int maxCount;
 
     public int curCount;
@@ -27,10 +29,6 @@ namespace BattleMode
     public float speed;
 
     public int phase = 0;
-
-    public string nextScene;
-
-    public string deadScene;
 
     [SerializeField]
     private Transform[] spawnLocate;
@@ -65,33 +63,14 @@ namespace BattleMode
 
     private int temp;
 
-    private float scale = minScale;
-
-    private Color color = normalColor;
-
-    private static readonly Color normalColor = Color.black;
-    private static readonly Color hitColor = Color.red;
-
-    private const float maxScale = 74f;
-    private const float minScale = 36f;
-
     private void Awake()
     {
       phaseInfo = FindObjectOfType<PhaseInfo>();
       poolManager = FindObjectOfType<ArrowEnemyPoolManager>();
-      ArrowEnemy.onTakeDamage += Enemy_OnTakeDamage;
       poolManager.onRelease += Enemy_OnReleased;
 
       if (string.IsNullOrEmpty(code))
         code = "start";
-    }
-
-    private void Enemy_OnTakeDamage(ArrowEnemy sender)
-    {
-      scale = maxScale;
-      color = hitColor;
-      
-      curCount++;
     }
 
     private void OnDestroy()
@@ -101,10 +80,9 @@ namespace BattleMode
 
     private void Start()
     {
-      StartPattern(code);
     }
 
-    private void StartPattern(string code)
+    public void StartPattern(string code)
     {
       spawnRoutines = patterns[code];
       phase = 0;
@@ -113,9 +91,8 @@ namespace BattleMode
 
     private void Enemy_OnReleased(ArrowEnemy obj)
     {
-      if (obj.isTrigger)
-        curCount++;
-      
+      curCount++;
+
       if (curCount == maxCount)
       {
         if (phase == spawnRoutines.Length - 1)
@@ -171,13 +148,7 @@ namespace BattleMode
       }
 
       leftCountTMP.text =
-        $"<color=#{color.ToHexString()}><size={scale}>{maxCount - curCount}명</size> 남음 - 페이즈 {phase + 1}</color>";
-
-      if (scale > minScale)
-      {
-        scale = Mathf.Lerp(scale, minScale, Time.deltaTime * 7f);
-        color = Color.Lerp(color, normalColor, Time.deltaTime * 7f);
-      }
+        $"{maxCount - curCount}명 남음 - 페이즈 {phase + 1}";
     }
 
     private IEnumerator PlayRoutine(string routine)

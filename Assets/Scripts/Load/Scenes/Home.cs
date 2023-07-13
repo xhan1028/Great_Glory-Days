@@ -24,9 +24,9 @@ namespace Load.Scenes
         {
           var arrowManager = FindObjectOfType<BattleMode.Arrow>();
 
-          arrowManager.nextScene = "Chp1";
-          arrowManager.deadScene = "Home";
-        }
+          BattleMode.Arrow.nextScene = "Chp1";
+        },
+        () => ChatManager.Instance.Talk("왜놈들이 사방에서 몰려오는군.", "얼른 처치 해야겠군", "W,A,S,D : 회전\nMouse Click : 공격\nE,Q : 스킬 사용")
       );
     }
 

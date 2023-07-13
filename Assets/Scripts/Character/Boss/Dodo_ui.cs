@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Dodo_ui : MonoBehaviour
+namespace Character.Boss
 {
-	public DODO_Option dodo_option;
-	public Slider slider;
-
-	void Start()
+	public class Dodo_ui : MonoBehaviour
 	{
-		slider.maxValue = dodo_option.health;
-	}
+		public DODO_Option dodo_option;
+		public Slider slider;
 
-	void Update()
-	{
-		slider.value = dodo_option.health;
+		void Start()
+		{
+			slider.maxValue = dodo_option.health;
+		}
+
+		void Update()
+		{
+			slider.value = dodo_option.health;
+		}
 	}
 }

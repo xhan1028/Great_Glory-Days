@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Manager;
 using UnityEngine;
 
-public class TalkManager : MonoBehaviour
+public class TalkManager : SingleTon<TalkManager>
 {
     Dictionary<int, string[]> talkData;
 
-    private void Awake()
+    protected override void Awake()
     {
         talkData = new Dictionary<int, string[]>();
         GenerateData();

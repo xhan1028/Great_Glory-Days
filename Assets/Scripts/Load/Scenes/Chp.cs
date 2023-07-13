@@ -2,17 +2,21 @@ using ScreenEffect;
 
 namespace Load.Scenes
 {
-  public class Chp1 : SceneStarter
+  public class Chp : SceneStarter
   {
+    public string bgm;
+
+    public string nextScene;
+    
     public override void OnStart()
     {
-      PlayBGM("chp1");
+      PlayBGM(bgm);
     }
 
     public void GoBattle()
       => SceneLoader.Instance.Load
       (
-        "Samurai_Battle",
+        nextScene,
         new EffectOption(ScreenEffects.FadeOut),
         new EffectOption(ScreenEffects.FadeIn)
       );

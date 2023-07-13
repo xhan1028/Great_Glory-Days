@@ -5,12 +5,17 @@ using Manager;
 using ScreenEffect;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Load.Scenes
 {
   public class SceneStarter : MonoBehaviour
   {
     public virtual void OnStart()
+    {
+    }
+
+    public virtual void OnLoadEnd()
     {
     }
 
@@ -29,6 +34,14 @@ namespace Load.Scenes
       }
       else
         ScreenClick.Instance.SetActive(false);
+
+      SceneLoader.Instance.onSceneChangedAndEndTransition += InstanceOnonSceneChangedAndEndTransition;
+    }
+
+    private void InstanceOnonSceneChangedAndEndTransition(string afterchangescene)
+    {
+      if (afterchangescene == SceneManager.GetActiveScene().name)
+        OnLoadEnd();
     }
 
     private void Start()
@@ -56,6 +69,8 @@ namespace Load.Scenes
     {
       if (this is IScreenClickable screenClickable)
         ScreenClick.Instance.onPointClick -= screenClickable.OnScreenClick;
+      
+      SceneLoader.Instance.onSceneChangedAndEndTransition -= InstanceOnonSceneChangedAndEndTransition;
     }
   }
 }
