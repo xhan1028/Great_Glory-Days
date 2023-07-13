@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Audio;
 using Load;
+using Particle;
 using ScreenEffect;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Boss_Option : MonoBehaviour
 {
@@ -17,9 +20,14 @@ public class Boss_Option : MonoBehaviour
         //currentHealth = maxHealth;
    // }
 
-    public void TakeDamage(int damage)
+   [SerializeField]
+   private ParticlePoolManager bloodPoolManager;
+
+   public void TakeDamage(int damage)
     {
         health -= damage;
+        bloodPoolManager.Get(obj => obj.transform.position = transform.position);
+        AudioManager.Instance.PlaySFX("blood" + Random.Range(1,4));
 
         animator.SetTrigger("Hurt");
 

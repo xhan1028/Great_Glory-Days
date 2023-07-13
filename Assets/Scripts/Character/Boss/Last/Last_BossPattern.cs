@@ -22,8 +22,8 @@ public class Last_BossPattern : MonoBehaviour
 
     private IEnumerator LastBossWeapon()
     {
-        float attackRate = 1.0f;
-        int count = 23;
+        float attackRate = 0.8f;
+        int count = 20;
         float intervalAngle = 360 / count; // 보스 발사체 사이의 각도
         float weightAngle = 0; // 같은 위치로 발사되지 않게 설정
 
@@ -36,7 +36,7 @@ public class Last_BossPattern : MonoBehaviour
                 float angle = weightAngle + intervalAngle * i;
                 float x = Mathf.Cos(angle * Mathf.PI / 180.0f);
                 float y = Mathf.Sin(angle * Mathf.PI / 180.0f);
-                clone.GetComponent<PlayerMovement>().MoveTo(new Vector2(x, y));
+                clone.GetComponent<PlayerMovement>().MoveTo(new Vector2(x, y) * 0.5f);
             }
 
             weightAngle += 1;

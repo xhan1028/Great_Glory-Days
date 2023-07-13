@@ -25,6 +25,15 @@ public class BossWeapon : MonoBehaviour
 		//SfxCtr1.SoundPlay();
 	}
 
+	public void StopMove()
+	{
+	}
+
+	public void StartMove()
+	{
+		
+	}
+
 	void OnDrawGizmosSelected()
 	{
 		Vector3 pos = transform.position;
