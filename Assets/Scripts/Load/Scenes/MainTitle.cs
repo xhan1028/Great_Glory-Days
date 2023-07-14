@@ -1,6 +1,7 @@
 ﻿using System;
 using Audio;
 using Cinema;
+using Manager;
 using ScreenEffect;
 using UnityEngine;
 
@@ -43,11 +44,12 @@ namespace Load.Scenes
 
     public void Exit()
     {
-      #if UNITY_EDITOR
-          UnityEditor.EditorApplication.isPlaying = false;
-      #else
-           Application.Quit();
-      #endif
+      // #if UNITY_EDITOR
+      //     UnityEditor.EditorApplication.isPlaying = false;
+      // #else
+      //      Application.Quit();
+      // #endif
+      GameManager.Instance.ExitGame();
     }
   }
 }

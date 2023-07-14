@@ -12,7 +12,7 @@ namespace Manager
   {
     [SerializeField]
     private GameObject optionPanel;
-    
+
     public void Die(string retryScene)
     {
       SceneLoader.Instance.Load("Die", null, null, () => FindObjectOfType<Die>().retryScene = retryScene);
@@ -38,8 +38,17 @@ namespace Manager
 
     private void Update()
     {
-      if(Input.GetKeyDown(KeyCode.Escape))
+      if (Input.GetKeyDown(KeyCode.Escape))
         ToggleOptionPanel();
+    }
+
+    public void ExitGame()
+    {
+#if UNITY_EDITOR
+      UnityEditor.EditorApplication.isPlaying = false;
+#else
+           Application.Quit();
+#endif
     }
   }
 }
