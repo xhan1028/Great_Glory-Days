@@ -27,7 +27,7 @@ namespace UI
 
     private void SetTextToStart()
     {
-      text.text = "Start";
+      text.text = "적이 몰려옵니다!!!";
     }
 
     private void StartNextPattern()

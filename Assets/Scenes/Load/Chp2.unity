@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b114380fae48a087c542d45b00e332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgm: 
+  bgm: chp1
   nextScene: Middle_1_Battle
 --- !u!1 &411664317
 GameObject:

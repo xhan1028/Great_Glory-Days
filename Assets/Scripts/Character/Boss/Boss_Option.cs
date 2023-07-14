@@ -43,10 +43,7 @@ namespace Character.Boss
 
     private void Start()
     {
-      if (type == "Chp1")
-      {
-        ChatManager.Instance.Talk("W,D : 이동\nSpace : 점프\nMouse Click : 공격");
-      }
+      
     }
 
     protected virtual void Die()

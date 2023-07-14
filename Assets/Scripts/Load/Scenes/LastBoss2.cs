@@ -1,4 +1,5 @@
 using Character.Player.Last_Boss;
+using ChatingManager;
 using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -35,7 +36,7 @@ namespace Load.Scenes
       if (!help)
       {
         help = true;
-        ChatManager.Instance.Talk("W,D : 이동\nSpace : 점프\nMouse Click : 공격");
+        ChatManager.Instance.Talk("A,D : 이동\nSpace : 점프\nMouse Click : 공격");
       }
     }
 

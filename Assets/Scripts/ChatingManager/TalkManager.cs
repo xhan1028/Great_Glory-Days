@@ -21,7 +21,7 @@ public class TalkManager : SingleTon<TalkManager>
         talkData.Add(1003, new string[] { "황하늘 그 녀석..", "밥만 많이 먹는 친구지.." });
         talkData.Add(1004, new string[] { "박준모 ..", "모내기.. 끝말잇기 시작" });
         talkData.Add(1005, new string[] { "요즘 세상이 흉흉하군..", "악의 힘이란게.. 도대체 뭐지?" });
-        talkData.Add(5125, new string[] { "이번에 많은 장군들이 출전했다는데..", "괜찮으실까?" });
+        talkData.Add(1006, new string[] { "이번에 많은 장군들이 출전했다는데..", "괜찮으실까?" });
     }
 
     public string GetTalk(int id, int talkIndex)

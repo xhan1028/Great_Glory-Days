@@ -655,8 +655,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Phase 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 014c19ceeb0e3ef4995ec7abe755979b, type: 2}
+  m_sharedMaterial: {fileID: 1079483398028934254, guid: 014c19ceeb0e3ef4995ec7abe755979b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1895,8 +1895,6 @@ MonoBehaviour:
   delay: 0
   speed: 0
   phase: 1
-  nextScene: 
-  deadScene: 
   spawnLocate:
   - {fileID: 1504292958}
   - {fileID: 1066330303}

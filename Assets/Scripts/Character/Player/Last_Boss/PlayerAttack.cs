@@ -14,7 +14,7 @@ namespace Character.Player.Last_Boss
       if (collision.CompareTag("Enemy"))
       {
         collision.GetComponent<Last_EnemyHealth>().TakeDamage(damage);
-        Release();
+        // Release();
       }
       else if(collision.CompareTag("Boss"))
       {

@@ -8,8 +8,6 @@ namespace Character.Player.ArrowBattle
   {
     public float speed = 2f;
 
-    public float despawnTime = 5f;
-
     private float time;
     
     private void FixedUpdate()
