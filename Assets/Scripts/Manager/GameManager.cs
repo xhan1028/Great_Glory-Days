@@ -1,4 +1,5 @@
 ﻿using System;
+using ChatingManager;
 using Cinema;
 using Load;
 using Load.Scenes;
@@ -27,6 +28,11 @@ namespace Manager
     public void GoToMain()
     {
       ToggleOptionPanel();
+
+      if (ChatManager.Instance.talkPanel.activeSelf)
+      {
+        ChatManager.Instance.ExitChatUI();
+      }
       SceneLoader.Instance.Load("Title_Main");
     }
 

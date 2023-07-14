@@ -35,9 +35,7 @@ namespace ChatingManager
 
       if (talkData == null)
       {
-        isAction = false;
-        talkIndex = 0;
-        scanObject = null;
+        ExitChatUI();
         return;
       }
 
@@ -76,15 +74,22 @@ namespace ChatingManager
       {
         if (talkIndex == talkData.Length - 1)
         {
-          isCustomTalk = false;
-          talkIndex = 0;
-          Time.timeScale = 1f;
-          talkPanel.SetActive(false);
+          ExitChatUI();
           return;
         }
         talkIndex++;
         Talk();
       }
+    }
+
+    public void ExitChatUI()
+    {
+      isAction = false;
+      isCustomTalk = false;
+      talkIndex = 0;
+      Time.timeScale = 1f;
+      scanObject = null;
+      talkPanel.SetActive(false);
     }
   }
 }
